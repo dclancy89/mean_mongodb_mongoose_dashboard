@@ -1,0 +1,21 @@
+doctype html
+html(lang='en')
+    head
+        title Mongoose Dashboard
+        style
+            include ../public/style.css
+    body
+        div.container
+            h1 Edit Otter
+            
+            form(action="/otters/" + otter[0]._id, method="post")
+                label(for="name") Name
+                input(type="text", name="name", id="name" value=otter[0].name)
+
+                label(for="age") Age
+                input(type="text", name="age", id="age" value=otter[0].age)
+
+                label(for="location") Location
+                input(type="text", name="location", id="location" value=otter[0].location)
+
+                input(type="submit", value="Update")

@@ -1,0 +1,18 @@
+doctype html
+html(lang='en')
+    head
+        title Mongoose Dashboard
+        style
+            include ../public/style.css
+    body
+        div.container
+            h1 Mongoose Dashboard
+            p All The Otters
+            ul
+            - for(otter of otters) 
+                li 
+                    - var id = otter._id
+                    a(href="/otters/" + id) Name: #{otter.name}, Age: #{otter.age}, Location: #{otter.location}
+                    form(action="/otters/destroy/" + id, method="post", class="delete")
+                        input(type="submit", value='delete')
+            

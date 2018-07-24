@@ -1,0 +1,15 @@
+doctype html
+html(lang='en')
+    head
+        title Mongoose Dashboard
+        style
+            include ../public/style.css
+    body
+        div.container
+            a(href="/otters") Home
+            h1 Mongoose Dashboard
+            p Name: #{otter[0].name}
+            p Age: #{otter[0].age}
+            p Location: #{otter[0].location}
+            p 
+                a(href="/otters/edit/" + otter[0]._id) Edit
